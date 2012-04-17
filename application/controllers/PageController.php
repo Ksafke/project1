@@ -13,7 +13,6 @@ class PageController extends Zend_Controller_Action
         $titleUrl = $this->_getParam('titleUrl');
         $model = new Application_Model_Page();
         $page = $model->getPage($titleUrl);
-        
         $this->view->page = $page;
         
                
