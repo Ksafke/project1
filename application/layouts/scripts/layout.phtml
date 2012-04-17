@@ -1,0 +1,26 @@
+<!DOCTYPE HTML> 
+<html>
+    <link href="/project1-final/public/css/style.css" rel="stylesheet" />
+    <body>
+        <div id="container">
+        <header>
+            <h1><?= $this->translate('text.header'); ?></h1>
+        </header>
+        <nav>
+            <!--<ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Test</a></li>
+            </ul>-->
+            <?php echo $this->navigation()->menu(); ?>
+        </nav>
+        <section>
+            <article>
+                <?php echo $this->layout()->content; ?>
+                <aside>
+                    <h2>Social media</h2>
+                </aside>
+            </article>
+        </section>
+        </div>
+    </body>
+</html>
