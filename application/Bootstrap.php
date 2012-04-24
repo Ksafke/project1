@@ -59,6 +59,14 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                     'action'     => 'index'
                 )));
         
+        // add custom route for admin
+        $router->addRoute('admin', 
+                new Zend_Controller_Router_Route('admin/:controller/:action', array(
+                    'module'     => 'admin',
+                    'controller' => 'index',
+                    'action'     => 'index'
+                )));
+        
         
         
         return $router;
