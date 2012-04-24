@@ -23,11 +23,12 @@ class UsersController extends Zend_Controller_Action
             if ($this->view->form->isValid($postParams)){
                 $params = $this->view->form->getValues();
                 echo '<pre>';
-                print_r($params);
+                print_r($this->view->form->getErrors());
                 echo '</pre>';
                 die();
             }else{
-                die('Alles invullen!');
+                $loginErrors = new Zend_Session_Namespace('loginErrors');
+                $loginErrors->errors = $this->view->form->getErrors();
             }
         }
     }
