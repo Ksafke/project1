@@ -40,6 +40,10 @@ class UsersController extends Zend_Controller_Action
                 if ($result->isValid()) {
                     
                     $identity = Zend_Auth::getInstance()->getIdentity();
+                    $userModel = new Application_Model_Users();
+                    $user = $userModel->getUser($identity);
+                    Zend_Registry::set('role',$user->role);
+                    
                     echo 'Ingelogd als ' . $identity;
                     
                 } else {
@@ -53,16 +57,30 @@ class UsersController extends Zend_Controller_Action
                 }
                 
 
+
+                $params = $this->view->form->getValues();
+
+                $auth = Zend_Auth::getInstance();
+
+
             }else{
                 $loginErrors = new Zend_Session_Namespace('loginErrors');
                 $loginErrors->errors = $this->view->form->getErrors();
 
             }
-        }
+        
+    }
+    }
+    public function logoutAction()
+    {
+        Zend_Auth::getInstance()->clearIdentity();
+        $this->_helper->redirector('/project1-final/public/nl_BE/');
     }
 
 
 }
+
+
 
 
 

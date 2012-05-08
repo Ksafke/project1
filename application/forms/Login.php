@@ -11,7 +11,6 @@ class Application_Form_Login extends Zend_Form
         $this->setMethod('post');
         $this->setAttrib('enctype', 'multipart/form-data');
 
-        $this->setAction($url);
 
         // LOGIN
         $this->addElement(new Zend_Form_Element_Text('login',array(
