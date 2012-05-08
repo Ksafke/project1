@@ -16,9 +16,10 @@ class UsersController extends Zend_Controller_Action
     public function loginAction()
     {
         $this->view->form = new Application_Form_Login();
+
          // controle en mail versturen
         if ($this->getRequest()->isPost()) {
-            // haal alle post variabelen op 
+            // haal alle post variabelen op
             $postParams = $this->getRequest()->getPost();
             if ($this->view->form->isValid($postParams)){
                 
@@ -51,10 +52,11 @@ class UsersController extends Zend_Controller_Action
                     
                 }
                 
-                
+
             }else{
                 $loginErrors = new Zend_Session_Namespace('loginErrors');
                 $loginErrors->errors = $this->view->form->getErrors();
+
             }
         }
     }
