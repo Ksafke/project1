@@ -10,7 +10,8 @@ class Admin_IndexController extends Zend_Controller_Action
 
     public function indexAction()
     {
-       die('we zitten in den admin');
+       $this->_helper->getHelper('layout')->disableLayout();
+       echo 'admin';
     }
 
 

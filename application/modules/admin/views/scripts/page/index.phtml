@@ -1,4 +1,7 @@
-<br /><br />
-<div id="view-content">
-	<p>View script for controller <b>Page</b> and script/action name <b>index</b></p>
-</div>
+<h1>Pagina overzicht</h1>
+<table width="600" border="1">
+<?php foreach ($this->pages as $page) { ?>
+<tr><td><?= $page->title; ?> - 
+        <a href="mod/id/<?= $page->pageID;?>">Wijzigen</a> | <a href="del/id/<?= $page->pageID;?>">Verwijderen</a></td></tr>
+<?php } ?>
+</table>

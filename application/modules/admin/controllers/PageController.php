@@ -10,14 +10,16 @@ class Admin_PageController extends Zend_Controller_Action
 
     public function indexAction()
     {
-        // action body
+        $pModel = new Application_Model_Page();
+        $pages = $pModel->getPages();
+        $this->view->pages = $pages;
     }
 
     public function addAction()
     {
         // layout uitzetten
-        $this->_helper->getHelper('layout')->disableLayout();
-        $form = new Application_Form_Pagina();
+        //$this->_helper->getHelper('layout')->disableLayout();
+        $form = new Application_Form_PageM();
         $this->view->form = $form;
     }
 

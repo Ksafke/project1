@@ -10,7 +10,7 @@ class Application_Form_Login extends Zend_Form
         // formulier aanmaken
         $this->setMethod('post');
         $this->setAttrib('enctype', 'multipart/form-data');
-        $this->setAction($url);
+        //$this->setAction($url);
       
         // LOGIN
         $this->addElement(new Zend_Form_Element_Text('login',array(

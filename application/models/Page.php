@@ -38,6 +38,23 @@ class Application_Model_Page extends Zend_Db_Table_Abstract
         return $row;
         
     }
+    
+    /**
+     * return $rows Zend_Db_Table_Abstract
+     * @param string $titleUrl 
+     */
+    public function getPages() {
+        
+        $select = $this->select(Zend_Db_Table::SELECT_WITH_FROM_PART);
+        $select->setIntegrityCheck(false)
+               ->join('pageLocal', 'page.pageID = pageLocal.pageID');
+        
+        $row = $this->fetchAll($select);
+        return $row;
+        
+    }
+    
+
 
 }
 
